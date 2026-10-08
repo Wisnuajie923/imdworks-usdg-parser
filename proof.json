@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "title": "Exact six-decimal USDG parser with reproducible generated evidence",
+  "bounty_uuid": "ffd0cae1-21e9-4378-bc3d-8c814377be97",
+  "escrow_id": 4,
+  "chain_id": 4663,
+  "author": "0xD7AFdc66e0C1Cca76Aca8537f30d10a324E246f1",
+  "signoff": "enueex https://x.com/AjaPawang",
+  "repository": "https://github.com/Wisnuajie923/imdworks-usdg-parser",
+  "repository_commit": "a5ccbbb17f57807847ada3d4c019bcaf5d4c8847",
+  "reproduction": "git clone https://github.com/Wisnuajie923/imdworks-usdg-parser.git && cd imdworks-usdg-parser && git checkout a5ccbbb17f57807847ada3d4c019bcaf5d4c8847 && python3 run_tests.py",
+  "artifact_url": "https://github.com/Wisnuajie923/imdworks-usdg-parser/releases/download/v1.0.0/usdg-parser-artifact.zip",
+  "artifact_sha256": "720e26a1e37061adfb12a6ea6a6a4763926ddc3f01d8ea431fcb38cfa565bfe1",
+  "report_url": "https://raw.githubusercontent.com/Wisnuajie923/imdworks-usdg-parser/a5ccbbb17f57807847ada3d4c019bcaf5d4c8847/results/report.json",
+  "explanation": "The production parser validates a whole-input ASCII decimal grammar, uses integer scaling to six decimals, rejects excess precision without rounding, and bounds the output to uint256. The separate formatter returns the canonical decimal representation. A separately implemented character-state oracle accumulates digits without regex or production-parser imports. README.md gives an algebraic proof using Euclidean division that parse(format_units(n)) = n for all uint256 values. The runner regenerates and reads back every generated record and verifies reference agreement, decisions, exact units, canonicalization, counts and dataset SHA256.",
+  "results": {
+    "python": "CPython 3.12.3",
+    "dependencies": "Python standard library only",
+    "unit_test_methods_passed": 8,
+    "generated_case_count": 100000,
+    "distinct_generated_inputs": 94654,
+    "seed": 917203,
+    "accepted": 37500,
+    "rejected": 62500,
+    "oracle_comparisons": 100000,
+    "oracle_mismatches": 0,
+    "generated_roundtrip_checks": 37500,
+    "roundtrip_failures": 0,
+    "hand_selected_edge_cases": 46,
+    "edge_failures": 0,
+    "executed_float_counterexamples": 4,
+    "dataset_sha256": "f54aca34bef8c5798d9c07e4ba872d5cc6b549bd1da4db3757dc0096ee19cdad",
+    "fresh_archive_replay": "PASS",
+    "additional_independent_decimal_checks": 50000,
+    "additional_decimal_precision": 120
+  },
+  "float_counterexamples": [
+    {"input": "1.000001", "exact_units": 1000001, "int_float_scaled": 1000000},
+    {"input": "9007199254.740993", "exact_units": 9007199254740993, "int_float_scaled": 9007199254740994},
+    {"input": "99999999999.999999", "exact_units": 99999999999999999, "int_float_scaled": 100000000000000000},
+    {"input": "0.000249", "exact_units": 249, "int_float_scaled": 248}
+  ],
+  "limitations": [
+    "One creator-selected winner; submission does not guarantee reward.",
+    "100000 generated records include repeated adversarial inputs; there are 94654 distinct input strings.",
+    "Finite generated tests supplement the documented algebraic proof; they do not exhaustively enumerate uint256.",
+    "Input grammar deliberately rejects localization, signs, whitespace, exponents, leading zeros and more than six fractional places.",
+    "For byte-identical seeded replay use recorded CPython 3.12.3. JSON consumers must preserve arbitrary-precision integers, not coerce them into JavaScript Number.",
+    "Artifact code is local-only and does not access wallets, credentials or production services. No paid services are required."
+  ]
+}
