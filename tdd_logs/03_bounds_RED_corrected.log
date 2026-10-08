@@ -1,0 +1,44 @@
+test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) ... ok
+test_exact_scaling (test_usdg.ParserTests.test_exact_scaling) ... ok
+test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) ... 
+  test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) (length=79) ... FAIL
+  test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) (length=72) ... FAIL
+  test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) (length=79) ... FAIL
+test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) ... FAIL
+
+======================================================================
+FAIL: test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) (length=79)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 40, in test_uint256_and_bounded_input
+    with self.subTest(length=len(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) (length=72)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 40, in test_uint256_and_bounded_input
+    with self.subTest(length=len(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) (length=79)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 40, in test_uint256_and_bounded_input
+    with self.subTest(length=len(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 45, in test_uint256_and_bounded_input
+    self.assertTrue(hasattr(module, 'MAX_INPUT_LENGTH'), 'length guard is missing')
+AssertionError: False is not true : length guard is missing
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.017s
+
+FAILED (failures=4)

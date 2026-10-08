@@ -1,0 +1,2 @@
+# Preserve verbatim unittest logs: subtest progress lines end in a space.
+tdd_logs/*.log whitespace=-blank-at-eol

@@ -1,0 +1,7 @@
+test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) ... ok
+test_exact_scaling (test_usdg.ParserTests.test_exact_scaling) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.011s
+
+OK

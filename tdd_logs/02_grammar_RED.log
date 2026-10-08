@@ -1,0 +1,187 @@
+test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) ... 
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'00'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'01'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'00.1'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'+1'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'-0'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'-1'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="' 1'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1 '") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'\\t1'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1\\n'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1.'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1_000'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'١'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'１'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'𝟙'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1\\xa0'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'0.0000000'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1.1234567'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1.٢'") ... FAIL
+  test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1\\r\\n'") ... FAIL
+test_exact_scaling (test_usdg.ParserTests.test_exact_scaling) ... ok
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'00'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'01'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'00.1'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'+1'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'-0'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'-1'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="' 1'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1 '")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'\\t1'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1\\n'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1.'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1_000'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'١'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'１'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'𝟙'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1\\xa0'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'0.0000000'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1.1234567'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1.٢'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) (text="'1\\r\\n'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 28, in test_ascii_strict_grammar
+    with self.subTest(text=repr(text)), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.004s
+
+FAILED (failures=20)

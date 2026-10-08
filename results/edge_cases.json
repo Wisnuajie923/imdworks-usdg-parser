@@ -1,0 +1,679 @@
+[
+  {
+    "accepted": true,
+    "canonical": "0",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 0,
+    "id": 0,
+    "input": "0",
+    "oracle_match": true,
+    "reason": "Zero",
+    "reference": {
+      "accepted": true,
+      "units": 0
+    },
+    "roundtrip_ok": true,
+    "units": 0
+  },
+  {
+    "accepted": true,
+    "canonical": "1",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 1000000,
+    "id": 1,
+    "input": "1",
+    "oracle_match": true,
+    "reason": "Integer",
+    "reference": {
+      "accepted": true,
+      "units": 1000000
+    },
+    "roundtrip_ok": true,
+    "units": 1000000
+  },
+  {
+    "accepted": true,
+    "canonical": "0.000001",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 1,
+    "id": 2,
+    "input": "0.000001",
+    "oracle_match": true,
+    "reason": "Minimum positive amount",
+    "reference": {
+      "accepted": true,
+      "units": 1
+    },
+    "roundtrip_ok": true,
+    "units": 1
+  },
+  {
+    "accepted": true,
+    "canonical": "0.999999",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 999999,
+    "id": 3,
+    "input": "0.999999",
+    "oracle_match": true,
+    "reason": "Below one token",
+    "reference": {
+      "accepted": true,
+      "units": 999999
+    },
+    "roundtrip_ok": true,
+    "units": 999999
+  },
+  {
+    "accepted": true,
+    "canonical": "12.3456",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 12345600,
+    "id": 4,
+    "input": "12.3456",
+    "oracle_match": true,
+    "reason": "Four decimal places",
+    "reference": {
+      "accepted": true,
+      "units": 12345600
+    },
+    "roundtrip_ok": true,
+    "units": 12345600
+  },
+  {
+    "accepted": true,
+    "canonical": "1",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 1000000,
+    "id": 5,
+    "input": "1.000000",
+    "oracle_match": true,
+    "reason": "Six trailing zeros allowed",
+    "reference": {
+      "accepted": true,
+      "units": 1000000
+    },
+    "roundtrip_ok": true,
+    "units": 1000000
+  },
+  {
+    "accepted": true,
+    "canonical": "0.01",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 10000,
+    "id": 6,
+    "input": "0.010000",
+    "oracle_match": true,
+    "reason": "Trailing zeros preserve exactness",
+    "reference": {
+      "accepted": true,
+      "units": 10000
+    },
+    "roundtrip_ok": true,
+    "units": 10000
+  },
+  {
+    "accepted": true,
+    "canonical": "0",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 0,
+    "id": 7,
+    "input": "0.0",
+    "oracle_match": true,
+    "reason": "Noncanonical zero is exact",
+    "reference": {
+      "accepted": true,
+      "units": 0
+    },
+    "roundtrip_ok": true,
+    "units": 0
+  },
+  {
+    "accepted": true,
+    "canonical": "1.23",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 1230000,
+    "id": 8,
+    "input": "1.230000",
+    "oracle_match": true,
+    "reason": "Canonical display removes zeros",
+    "reference": {
+      "accepted": true,
+      "units": 1230000
+    },
+    "roundtrip_ok": true,
+    "units": 1230000
+  },
+  {
+    "accepted": true,
+    "canonical": "115792089237316195423570985008687907853269984665640564039457584007913129.639935",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 115792089237316195423570985008687907853269984665640564039457584007913129639935,
+    "id": 9,
+    "input": "115792089237316195423570985008687907853269984665640564039457584007913129.639935",
+    "oracle_match": true,
+    "reason": "uint256 maximum",
+    "reference": {
+      "accepted": true,
+      "units": 115792089237316195423570985008687907853269984665640564039457584007913129639935
+    },
+    "roundtrip_ok": true,
+    "units": 115792089237316195423570985008687907853269984665640564039457584007913129639935
+  },
+  {
+    "accepted": true,
+    "canonical": "115792089237316195423570985008687907853269984665640564039457584007913129.639934",
+    "expected_accepted": true,
+    "expected_match": true,
+    "expected_units": 115792089237316195423570985008687907853269984665640564039457584007913129639934,
+    "id": 10,
+    "input": "115792089237316195423570985008687907853269984665640564039457584007913129.639934",
+    "oracle_match": true,
+    "reason": "One unit below maximum",
+    "reference": {
+      "accepted": true,
+      "units": 115792089237316195423570985008687907853269984665640564039457584007913129639934
+    },
+    "roundtrip_ok": true,
+    "units": 115792089237316195423570985008687907853269984665640564039457584007913129639934
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 11,
+    "input": "115792089237316195423570985008687907853269984665640564039457584007913129.639936",
+    "oracle_match": true,
+    "reason": "One unit above maximum",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 12,
+    "input": "115792089237316195423570985008687907853269984665640564039457584007913130",
+    "oracle_match": true,
+    "reason": "Whole amount over maximum",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 13,
+    "input": "",
+    "oracle_match": true,
+    "reason": "Empty",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 14,
+    "input": "00",
+    "oracle_match": true,
+    "reason": "Leading zero",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 15,
+    "input": "01",
+    "oracle_match": true,
+    "reason": "Leading zero",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 16,
+    "input": "00.1",
+    "oracle_match": true,
+    "reason": "Fraction does not excuse leading zero",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 17,
+    "input": "+1",
+    "oracle_match": true,
+    "reason": "Plus sign",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 18,
+    "input": "-1",
+    "oracle_match": true,
+    "reason": "Minus sign",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 19,
+    "input": "-0",
+    "oracle_match": true,
+    "reason": "Signed zero",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 20,
+    "input": " 1",
+    "oracle_match": true,
+    "reason": "Leading space",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 21,
+    "input": "1 ",
+    "oracle_match": true,
+    "reason": "Trailing space",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 22,
+    "input": "\t1",
+    "oracle_match": true,
+    "reason": "Tab",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 23,
+    "input": "1\n",
+    "oracle_match": true,
+    "reason": "Trailing LF",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 24,
+    "input": "1\r\n",
+    "oracle_match": true,
+    "reason": "Trailing CRLF",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 25,
+    "input": ".1",
+    "oracle_match": true,
+    "reason": "Missing whole digits",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 26,
+    "input": "1.",
+    "oracle_match": true,
+    "reason": "Missing fractional digits",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 27,
+    "input": "1..2",
+    "oracle_match": true,
+    "reason": "Repeated dot",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 28,
+    "input": "1e3",
+    "oracle_match": true,
+    "reason": "Exponent",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 29,
+    "input": "1E-6",
+    "oracle_match": true,
+    "reason": "Exponent",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 30,
+    "input": "0.0000001",
+    "oracle_match": true,
+    "reason": "Excess nonzero precision",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 31,
+    "input": "1.0000000",
+    "oracle_match": true,
+    "reason": "Excess zero precision",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 32,
+    "input": "\u0661",
+    "oracle_match": true,
+    "reason": "Arabic-Indic digit",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 33,
+    "input": "\uff11",
+    "oracle_match": true,
+    "reason": "Fullwidth digit",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 34,
+    "input": "\ud835\udfd9",
+    "oracle_match": true,
+    "reason": "Mathematical digit",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 35,
+    "input": "1\uff0e0",
+    "oracle_match": true,
+    "reason": "Fullwidth dot",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 36,
+    "input": "1\u00a0",
+    "oracle_match": true,
+    "reason": "Nonbreaking space",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 37,
+    "input": "1\u200b",
+    "oracle_match": true,
+    "reason": "Zero-width space",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 38,
+    "input": "1_000",
+    "oracle_match": true,
+    "reason": "Underscore",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 39,
+    "input": "1,000",
+    "oracle_match": true,
+    "reason": "Thousands separator",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 40,
+    "input": "0x10",
+    "oracle_match": true,
+    "reason": "Hexadecimal",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 41,
+    "input": "NaN",
+    "oracle_match": true,
+    "reason": "NaN",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 42,
+    "input": "Infinity",
+    "oracle_match": true,
+    "reason": "Infinity",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 43,
+    "input": "1\u0000",
+    "oracle_match": true,
+    "reason": "NUL",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 44,
+    "input": "99999999999999999999999999999999999999999999999999999999999999999999999999999999",
+    "oracle_match": true,
+    "reason": "Overlength",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  },
+  {
+    "accepted": false,
+    "error": "ValueError",
+    "expected_accepted": false,
+    "expected_match": true,
+    "id": 45,
+    "input": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+    "oracle_match": true,
+    "reason": "Huge malformed input",
+    "reference": {
+      "accepted": false,
+      "error": "ValueError"
+    }
+  }
+]

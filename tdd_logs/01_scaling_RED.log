@@ -1,0 +1,17 @@
+test_exact_scaling (test_usdg.ParserTests.test_exact_scaling) ... FAIL
+
+======================================================================
+FAIL: test_exact_scaling (test_usdg.ParserTests.test_exact_scaling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 13, in test_exact_scaling
+    parse = self.parser().parse
+            ^^^^^^^^^^^^^
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 9, in parser
+    self.assertIsNotNone(importlib.util.find_spec('usdg'), 'production parser is missing')
+AssertionError: unexpectedly None : production parser is missing
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)

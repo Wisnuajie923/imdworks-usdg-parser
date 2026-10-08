@@ -1,0 +1,88 @@
+{
+  "accepted": 37500,
+  "cases_sha256": "f54aca34bef8c5798d9c07e4ba872d5cc6b549bd1da4db3757dc0096ee19cdad",
+  "category_counts": {
+    "excess_precision": 6250,
+    "exponents": 6250,
+    "fraction_widths": 6250,
+    "full_uint256": 6250,
+    "integers": 6250,
+    "leading_zeros": 6250,
+    "long_malformed": 6250,
+    "lookalikes_and_separators": 6250,
+    "missing_digits_or_dots": 6250,
+    "near_uint256": 6250,
+    "overflow": 6250,
+    "signs": 6250,
+    "subunit": 6250,
+    "trailing_fraction_zeros": 6250,
+    "unicode_digits": 6250,
+    "whitespace": 6250
+  },
+  "distinct_generated_inputs": 94654,
+  "edge_count": 46,
+  "edge_failures": 0,
+  "edge_oracle_comparisons": 46,
+  "edge_roundtrip_checks": 11,
+  "float_counterexamples": [
+    {
+      "exact_units": 1000001,
+      "float_hex": "0x1.000010c6f7a0bp+0",
+      "float_rounded_units": 1000001,
+      "float_truncated_units": 1000000,
+      "input": "1.000001",
+      "rounding_error_units": 0,
+      "scaled_float_hex": "0x1.e8481ffffffffp+19",
+      "scaled_float_repr": "1000000.9999999999",
+      "truncation_error_units": -1
+    },
+    {
+      "exact_units": 9007199254740993,
+      "float_hex": "0x1.0c6f7a0b5ed8ep+33",
+      "float_rounded_units": 9007199254740994,
+      "float_truncated_units": 9007199254740994,
+      "input": "9007199254.740993",
+      "rounding_error_units": 1,
+      "scaled_float_hex": "0x1.0000000000001p+53",
+      "scaled_float_repr": "9007199254740994.0",
+      "truncation_error_units": 1
+    },
+    {
+      "exact_units": 99999999999999999,
+      "float_hex": "0x1.74876e8000000p+36",
+      "float_rounded_units": 100000000000000000,
+      "float_truncated_units": 100000000000000000,
+      "input": "99999999999.999999",
+      "rounding_error_units": 1,
+      "scaled_float_hex": "0x1.6345785d8a000p+56",
+      "scaled_float_repr": "1e+17",
+      "truncation_error_units": 1
+    },
+    {
+      "exact_units": 249,
+      "float_hex": "0x1.05186db50f40ep-12",
+      "float_rounded_units": 249,
+      "float_truncated_units": 248,
+      "input": "0.000249",
+      "rounding_error_units": 0,
+      "scaled_float_hex": "0x1.f1fffffffffffp+7",
+      "scaled_float_repr": "248.99999999999997",
+      "truncation_error_units": -1
+    }
+  ],
+  "generated_count": 100000,
+  "oracle_comparisons": 100000,
+  "oracle_mismatches": 0,
+  "rejected": 62500,
+  "roundtrip_checks": 37500,
+  "roundtrip_failures": 0,
+  "runtime": {
+    "float_mantissa_bits": 53,
+    "float_radix": 2,
+    "implementation": "cpython",
+    "python": "3.12.3"
+  },
+  "schema_version": 1,
+  "seed": 917203,
+  "status": "PASS"
+}

@@ -1,0 +1,17 @@
+test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) ... ok
+test_canonical_formatter_and_integer_roundtrip (test_usdg.ParserTests.test_canonical_formatter_and_integer_roundtrip) ... FAIL
+test_exact_scaling (test_usdg.ParserTests.test_exact_scaling) ... ok
+test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) ... ok
+
+======================================================================
+FAIL: test_canonical_formatter_and_integer_roundtrip (test_usdg.ParserTests.test_canonical_formatter_and_integer_roundtrip)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 51, in test_canonical_formatter_and_integer_roundtrip
+    self.assertTrue(hasattr(module, 'format_units'), 'formatter is missing')
+AssertionError: False is not true : formatter is missing
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.012s
+
+FAILED (failures=1)

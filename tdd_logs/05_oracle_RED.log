@@ -1,0 +1,18 @@
+test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) ... ok
+test_canonical_formatter_and_integer_roundtrip (test_usdg.ParserTests.test_canonical_formatter_and_integer_roundtrip) ... ok
+test_exact_scaling (test_usdg.ParserTests.test_exact_scaling) ... ok
+test_independent_character_oracle (test_usdg.ParserTests.test_independent_character_oracle) ... FAIL
+test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) ... ok
+
+======================================================================
+FAIL: test_independent_character_oracle (test_usdg.ParserTests.test_independent_character_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/imd-usdg-parser/test_usdg.py", line 70, in test_independent_character_oracle
+    self.assertIsNotNone(importlib.util.find_spec('reference'), 'reference parser is missing')
+AssertionError: unexpectedly None : reference parser is missing
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.070s
+
+FAILED (failures=1)

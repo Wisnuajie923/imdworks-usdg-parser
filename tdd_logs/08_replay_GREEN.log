@@ -1,0 +1,16 @@
+test_ascii_strict_grammar (test_usdg.ParserTests.test_ascii_strict_grammar) ... ok
+test_canonical_formatter_and_integer_roundtrip (test_usdg.ParserTests.test_canonical_formatter_and_integer_roundtrip) ... ok
+test_exact_scaling (test_usdg.ParserTests.test_exact_scaling) ... ok
+test_independent_character_oracle (test_usdg.ParserTests.test_independent_character_oracle) ... ok
+test_one_command_replay_entrypoint (test_usdg.ParserTests.test_one_command_replay_entrypoint) ... ok
+test_published_evidence (test_usdg.ParserTests.test_published_evidence) ... ok
+test_seeded_generator (test_usdg.ParserTests.test_seeded_generator) ... ok
+test_uint256_and_bounded_input (test_usdg.ParserTests.test_uint256_and_bounded_input) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.390s
+
+OK
+PASS: 8 tests; 100000 published/read-back cases; 37500 accepted; 62500 rejected; 46 edges; 4 float counterexamples
+Seed: 917203; oracle mismatches: 0; roundtrip failures: 0
+Dataset SHA256: f54aca34bef8c5798d9c07e4ba872d5cc6b549bd1da4db3757dc0096ee19cdad
